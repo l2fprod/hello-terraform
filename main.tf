@@ -10,6 +10,10 @@ resource "random_string" "random" {
   override_special = "/@£$"
 }
 
-output "result" {
+output "random" {
   value = [ for r in random_string.random: r.result ]
+}
+
+output "hello" {
+  value = "world"
 }
