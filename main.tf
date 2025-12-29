@@ -2,6 +2,11 @@ variable "string_count" {
   default = 1
 }
 
+variable "tags" {
+  type    = map(string)
+  default = {}
+}
+
 resource "random_string" "random" {
   count = var.string_count
 
@@ -16,4 +21,8 @@ output "random" {
 
 output "hello" {
   value = "world"
+}
+
+output "tags" {
+  value = var.tags
 }
