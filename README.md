@@ -1,1 +1,3 @@
 # hello-terraform
+
+Simple example.
