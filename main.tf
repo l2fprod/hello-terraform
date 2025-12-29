@@ -7,6 +7,11 @@ variable "tags" {
   default = {}
 }
 
+variable "pci_compliance_tags" {
+  type    = map(string)
+  default = {}
+}
+
 resource "random_string" "random" {
   count = var.string_count
 
@@ -24,5 +29,5 @@ output "hello" {
 }
 
 output "tags" {
-  value = var.tags
+  value = merge(var.pci_compliance_tags, var.tags)
 }
