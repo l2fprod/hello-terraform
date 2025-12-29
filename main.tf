@@ -8,8 +8,9 @@ variable "tags" {
 }
 
 variable "pci_compliance_tags" {
-  type    = map(string)
-  default = {}
+  type        = map(string)
+  description = "Tags required for PCI compliance"
+  default     = {}
 }
 
 resource "random_string" "random" {
@@ -21,7 +22,7 @@ resource "random_string" "random" {
 }
 
 output "random" {
-  value = [ for r in random_string.random: r.result ]
+  value = [for r in random_string.random : r.result]
 }
 
 output "hello" {
